@@ -1,0 +1,20 @@
+Watching for file changes with StatReloader
+"GET /albums/ HTTP/1.1" 200 1358
+Not Found: /albums/0b715bf9-cbc4-4a38-80d0-9d7169ac2d07q
+"GET /albums/0b715bf9-cbc4-4a38-80d0-9d7169ac2d07q HTTP/1.1" 404 3816
+"GET /albums/0b715bf9-cbc4-4a38-80d0-9d7169ac2d07 HTTP/1.1" 204 220
+"GET /albums/0b715bf9-cbc4-4a38-80d0-9d7169ac2d07 HTTP/1.1" 204 220
+Not Found: /albums/0b715bf9-cbc4-4a38-80d0-9d7169ac2d072
+"GET /albums/0b715bf9-cbc4-4a38-80d0-9d7169ac2d072 HTTP/1.1" 404 3816
+"GET /albums/0b715bf9-cbc4-4a38-80d0-9d7169ac2d07 HTTP/1.1" 204 220
+Not Found: /artists/f1983c41-e76b-4d03-a4ea-7b35e4594c67z
+"GET /artists/f1983c41-e76b-4d03-a4ea-7b35e4594c67z HTTP/1.1" 404 3819
+Not Found: /artists/f1983c41-e76b-4d03-a4ea-7b35e4594c67
+"GET /artists/f1983c41-e76b-4d03-a4ea-7b35e4594c67 HTTP/1.1" 404 18
+Not Found: /artists/f1983c41-e76b-4d03-a4ea-7b35e4594c67
+"GET /artists/f1983c41-e76b-4d03-a4ea-7b35e4594c67 HTTP/1.1" 404 18
+Not Found: /artists/f1983c41-e76b-4d03-a4ea-7b35
+"GET /artists/f1983c41-e76b-4d03-a4ea-7b35 HTTP/1.1" 404 3792
+"GET /artists/ HTTP/1.1" 200 606
+"GET /artists/d1d54084-5f95-4f6a-9485-77f8dc1b15d9 HTTP/1.1" 204 457
+/home/alok/Documents/poc/music/music/settings.py changed, reloading.
