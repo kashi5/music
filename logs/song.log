@@ -18,3 +18,24 @@ Not Found: /artists/f1983c41-e76b-4d03-a4ea-7b35
 "GET /artists/ HTTP/1.1" 200 606
 "GET /artists/d1d54084-5f95-4f6a-9485-77f8dc1b15d9 HTTP/1.1" 204 457
 /home/alok/Documents/poc/music/music/settings.py changed, reloading.
+Not Found: /artist
+Watching for file changes with StatReloader
+Not Found: /artist
+Not Found: /artist
+Not Found: /artist
+Not Found: /artist
+Watching for file changes with StatReloader
+"GET /artists/ HTTP/1.1" 200 689
+Not Found: /artist
+Not Found: /artist
+Not Found: /artist
+Not Found: /artists
+Not Found: /artists//sort_asc=name
+Not Found: /artists//sort_asc=name
+Watching for file changes with StatReloader
+"GET /artists/ HTTP/1.1" 200 689
+"GET /artists/ HTTP/1.1" 200 689
+"GET /artists/?sort_asc=name HTTP/1.1" 200 689
+"GET /artists/?sort_asc=name HTTP/1.1" 200 689
+Watching for file changes with StatReloader
+"GET /artists/?sort_desc=first_year_active HTTP/1.1" 200 689
