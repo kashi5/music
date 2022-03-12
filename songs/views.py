@@ -80,8 +80,9 @@ class ArtistsDetailView(viewsets.ModelViewSet):
     def partial_upadte(self, request, *args, **kwargs):
         try:
             instance=self.get_object()
-            serializer = ArtistsDetailSerializer(instance,partial=True)
-            self.perform_update(instance)
+            serializer = ArtistsDetailSerializer(instance,data=request.data,partial=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             print(e)
@@ -146,8 +147,9 @@ class LyricsDetailView(viewsets.ModelViewSet):
     def partial_update(self, request, *args, **kwargs):
         try:
             instance=self.get_object()
-            serializer = LyricsUpdateSerializer(instance,partial=True)
-            self.perform_update(instance)
+            serializer = LyricsUpdateSerializer(instance,data=request.data,partial=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             print(e)
@@ -234,8 +236,9 @@ class AlbumsDetailView(viewsets.ModelViewSet):
     def partial_upadte(self, request, *args, **kwargs):
         try:
             instance=self.get_object()
-            serializer = AlbumDetailSerializer(instance,partial=True)
-            self.perform_update(instance)
+            serializer = AlbumDetailSerializer(instance,data=request.data,partial=True)
+            serializer.is_valid(raise_exception=True)
+            self.perform_update(serializer)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             print(e)
