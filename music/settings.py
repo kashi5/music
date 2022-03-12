@@ -80,22 +80,22 @@ WSGI_APPLICATION = 'music.wsgi.application'
 
 DATABASES = {
     
-    # 'default': {
-    #             'ENGINE': 'django.db.backends.postgresql',
-    #             'HOST': 'db',
-    #             'PORT': 5432,
-    #             'NAME': os.environ.get('POSTGRES_NAME'),
-    #             'USER': os.environ.get('POSTGRES_USER'),
-    #             'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-    #             }
     'default': {
                 'ENGINE': 'django.db.backends.postgresql',
-                'HOST': 'localhost',
+                'HOST': 'db',
                 'PORT': 5432,
-                'NAME': 'music',
-                'USER': 'sam',
-                'PASSWORD': 'tom123',
+                'NAME': os.environ.get('POSTGRES_NAME'),
+                'USER': os.environ.get('POSTGRES_USER'),
+                'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
                 }
+    # 'default': {
+    #             'ENGINE': 'django.db.backends.postgresql',
+    #             'HOST': 'localhost',
+    #             'PORT': 5432,
+    #             'NAME': 'music',
+    #             'USER': 'sam',
+    #             'PASSWORD': 'tom123',
+    #             }
 }
 
 
