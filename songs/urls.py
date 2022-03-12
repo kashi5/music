@@ -27,7 +27,7 @@ lyrics_detail = LyricsDetailView.as_view({
 })
 
 lyrics_vote=LyricsDetailView.as_view({
-    'post':'lyrics_vote'
+    'patch':'lyrics_vote'
 })
 
 album_list = AlbumsListView.as_view({

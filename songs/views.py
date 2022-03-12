@@ -25,7 +25,7 @@ class ArtistsListView(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
             print(e)
-            return Response("something went wrong.", status=status.HTTP_400_BAD_REQUEST)
+            return Response("Record already exists.", status=status.HTTP_409_CONFLICT)
     
     
     def list(self, request, *args, **kwargs):
@@ -98,6 +98,7 @@ class LyricsListView(viewsets.ModelViewSet):
             serializer = self.get_serializer(data=request.data)
             serializer.is_valid(raise_exception=True)
             self.perform_create(serializer)
+            serializer = LyricsUpdateSerializer(Lyrics.objects.get(id=serializer.data['id']),many=False)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
             print(e)
@@ -122,7 +123,7 @@ class LyricsListView(viewsets.ModelViewSet):
         try:
             queryset = Lyrics.objects.all().order_by('?')[:1]
             serializer = LyricsDetailSerializer(queryset,many=True)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as e:
             print(e)
             return Response("Album name arleady exists or Artist not found.", status=status.HTTP_400_BAD_REQUEST)
@@ -142,7 +143,7 @@ class LyricsDetailView(viewsets.ModelViewSet):
             print(e)
             return Response("Lyric not found", status=status.HTTP_404_NOT_FOUND)
 
-    def partial_upadte(self, request, *args, **kwargs):
+    def partial_update(self, request, *args, **kwargs):
         try:
             instance=self.get_object()
             serializer = LyricsUpdateSerializer(instance,partial=True)
@@ -164,10 +165,12 @@ class LyricsDetailView(viewsets.ModelViewSet):
     def lyrics_vote(self, request, *args, **kwargs):
         try:
             instance=self.get_object()
-            if int(request.data['up_vote']) > 0:
-                instance.up_vote += 1
-            if int(request.data['down_vote']) > 0:
-                instance.down_vote += 1
+            if 'up_vote' in request.data:
+                if int(request.data['up_vote']) > 0:
+                    instance.up_vote += 1
+            if 'down_vote' in request.data:
+                if int(request.data['down_vote']) > 0:
+                    instance.down_vote += 1
             instance.save()
             serializer = LyricsDetailSerializer(instance)
             return Response(serializer.data, status=status.HTTP_200_OK)
@@ -189,7 +192,7 @@ class AlbumsListView(viewsets.ModelViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as e:
             print(e)
-            return Response("Lyrics name arleady exists or Album not found.", status=status.HTTP_400_BAD_REQUEST)
+            return Response("Lyrics name arleady exists or Album not found.", status=status.HTTP_409_CONFLICT)
     
     def list(self, request, *args, **kwargs):
         try:

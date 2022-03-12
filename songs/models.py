@@ -8,12 +8,13 @@ from django.db import models
 
 class Artists(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.TextField(max_length=80,blank=False, null=False)
+    name = models.TextField(max_length=80,blank=False, null=False,unique=True)
     first_year_active = models.IntegerField(null=True)
     create_date = models.DateTimeField(default=timezone.now)
     
     class Meta:
         db_table = 'artists'
+        
 
 '''This model is used to store the Album Details''' 
 
@@ -41,4 +42,5 @@ class Lyrics(models.Model):
     
     class Meta:
         db_table = 'lyrics'
+        unique_together = ('name', 'text')
         
