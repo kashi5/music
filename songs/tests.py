@@ -263,4 +263,16 @@ class  TestLyrics(APITestCase):
         self.assertEqual(response.status_code,200)
         self.assertIsInstance(result,dict)
         self.assertEqual(result['name'],'Hanuma')
+        
+    def test_vote_lyrics(self):
+        pk = Lyrics.objects.get(name='Dawn').id
+        data={
+            "up_vote":1 
+                }
+        response =self.client.patch(f'/lyrics_vote/{str(pk)}',data=data)
+        result = response.json()
+        # assert
+        self.assertEqual(response.status_code,200)
+        self.assertIsInstance(result,dict)
+        self.assertEqual(result['up_vote'],1)
     
