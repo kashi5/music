@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ga6g2$4%2(v98*nds7eho^)i!lp&dqgw+jp5k5^7ufedf7)5h3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['music-poc-ak.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -81,16 +81,16 @@ WSGI_APPLICATION = 'music.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default':dj_database_url.config(default=os.getenv('DATABASE_URL'))
+    # 'default':dj_database_url.config(default=os.getenv('DATABASE_URL'))
     
-    # 'default': {
-    #             'ENGINE': 'django.db.backends.postgresql',
-    #             'HOST': 'db',
-    #             'PORT': 5432,
-    #             'NAME': os.environ.get('POSTGRES_NAME'),
-    #             'USER': os.environ.get('POSTGRES_USER'),
-    #             'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-    #             },
+    'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'HOST': 'db',
+                'PORT': 5432,
+                'NAME': os.environ.get('POSTGRES_NAME'),
+                'USER': os.environ.get('POSTGRES_USER'),
+                'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+                },
            
             
       
