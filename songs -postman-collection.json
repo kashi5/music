@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "0f11f86b-cdd6-407f-ae2a-0b62935173d3",
+		"name": "songs - ak",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Artists",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Kid Laroi\",\n    \"first_year_active\": 2021\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}artists/",
+					"host": [
+						"{{local}}artists"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Albums",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n    \n    \"name\": \"Dance\",\n    \"year\": 1985,\n    \"artist\":\"164a6c18-692c-496e-a5b5-94d62660da5a\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}albums/",
+					"host": [
+						"{{local}}albums"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Lyrics",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Rusputin1\",\n    \"text\":\"Yo Yo12\",\n    \"album\":\"ea3e5427-8adc-4d8e-95ac-b541921846ea\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}lyrics/",
+					"host": [
+						"{{local}}lyrics"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Albums",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ed Sheeran\",\n    \"first_year_active\": 2010\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}albums/",
+					"host": [
+						"{{local}}albums"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Artists",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"A R Reheman\",\n    \"first_year_active\": 1991\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}artists/",
+					"host": [
+						"{{local}}artists"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "swift",
+							"disabled": true
+						},
+						{
+							"key": "sort_asc",
+							"value": "first_year_active",
+							"disabled": true
+						},
+						{
+							"key": "sort_asc",
+							"value": "name",
+							"disabled": true
+						},
+						{
+							"key": "sort_desc",
+							"value": "name",
+							"disabled": true
+						},
+						{
+							"key": "sort_desc",
+							"value": "first_year_active",
+							"disabled": true
+						},
+						{
+							"key": "year_greater",
+							"value": "1965",
+							"disabled": true
+						},
+						{
+							"key": "year_lesser",
+							"value": "1965",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Lyrics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ed Sheeran\",\n    \"first_year_active\": 2010\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}yrics/",
+					"host": [
+						"{{local}}yrics"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "bonny",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Lyrics Random",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ed Sheeran\",\n    \"first_year_active\": 2010\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}random_lyric/",
+					"host": [
+						"{{local}}random_lyric"
+					],
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Albums",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}albums/9209d380-bc96-4e8a-8f9b-abbfd30617c6",
+					"host": [
+						"{{local}}albums"
+					],
+					"path": [
+						"9209d380-bc96-4e8a-8f9b-abbfd30617c6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Lyrics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ed Sheeran\",\n    \"first_year_active\": 2010\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}lyrics/6f031433-c512-4f4d-8941-ceb5fb175e1f",
+					"host": [
+						"{{local}}lyrics"
+					],
+					"path": [
+						"6f031433-c512-4f4d-8941-ceb5fb175e1f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Detail Artists",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"A R Reheman\",\n    \"first_year_active\": 1991\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}artists/07c52b26-e6f2-48e4-9a40-937fb6201905",
+					"host": [
+						"{{local}}artists"
+					],
+					"path": [
+						"07c52b26-e6f2-48e4-9a40-937fb6201905"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Vote Lyrics",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"down_vote\":525 \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}lyrics_vote/d2df49a1-4285-485f-ad76-97ccad635015",
+					"host": [
+						"{{local}}lyrics_vote"
+					],
+					"path": [
+						"d2df49a1-4285-485f-ad76-97ccad635015"
+					],
+					"query": [
+						{
+							"key": "up_vote",
+							"value": "1",
+							"disabled": true
+						},
+						{
+							"key": "down_vote",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Albums",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Evening.\",\n    \"year\": 2024\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}albums/cf58d310-d77c-4128-9079-c557e4a6c111",
+					"host": [
+						"{{local}}albums"
+					],
+					"path": [
+						"cf58d310-d77c-4128-9079-c557e4a6c111"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Artists",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Ed Sheeran.\",\n    \"first_year_active\": 2021\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}artists/d6c03333-434e-44e6-aeef-89c00e800a3f",
+					"host": [
+						"{{local}}artists"
+					],
+					"path": [
+						"d6c03333-434e-44e6-aeef-89c00e800a3f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Lyrics",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"name\":\"Can i sese u\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}lyrics/f9d41688-2bc6-4bbb-84f7-150218db1732",
+					"host": [
+						"{{local}}lyrics"
+					],
+					"path": [
+						"f9d41688-2bc6-4bbb-84f7-150218db1732"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Artists",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"A R Reheman\",\n    \"first_year_active\": 1991\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}artists/399ae3aa-5f64-4815-b388-ca6ec6f10dd9",
+					"host": [
+						"{{local}}artists"
+					],
+					"path": [
+						"399ae3aa-5f64-4815-b388-ca6ec6f10dd9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Lyrics",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"A R Reheman\",\n    \"first_year_active\": 1991\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}yrics/559dd939-8fcb-459d-a531-97ba978c0117",
+					"host": [
+						"{{local}}yrics"
+					],
+					"path": [
+						"559dd939-8fcb-459d-a531-97ba978c0117"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Album",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"A R Reheman\",\n    \"first_year_active\": 1991\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}albums/1b20fcd4-750d-4d77-8b7d-5a4db3351f08",
+					"host": [
+						"{{local}}albums"
+					],
+					"path": [
+						"1b20fcd4-750d-4d77-8b7d-5a4db3351f08"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
