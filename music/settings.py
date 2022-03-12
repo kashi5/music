@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 import os
 from pathlib import Path
-
+import dj_database_url,os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -79,15 +79,19 @@ WSGI_APPLICATION = 'music.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    'default':dj_database_url.config(default=os.getenv('DATABASE_URL'))
     
-    'default': {
-                'ENGINE': 'django.db.backends.postgresql',
-                'HOST': 'db',
-                'PORT': 5432,
-                'NAME': os.environ.get('POSTGRES_NAME'),
-                'USER': os.environ.get('POSTGRES_USER'),
-                'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-                }
+    # 'default': {
+    #             'ENGINE': 'django.db.backends.postgresql',
+    #             'HOST': 'db',
+    #             'PORT': 5432,
+    #             'NAME': os.environ.get('POSTGRES_NAME'),
+    #             'USER': os.environ.get('POSTGRES_USER'),
+    #             'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
+    #             },
+           
+            
+      
     # 'default': {
     #             'ENGINE': 'django.db.backends.postgresql',
     #             'HOST': 'localhost',
@@ -147,21 +151,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'INFO',
-            'class': 'logging.FileHandler',
-            'filename': 'logs/song.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'INFO',
-            'propagate': True,
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'file': {
+#             'level': 'INFO',
+#             'class': 'logging.FileHandler',
+#             'filename': 'logs/song.log',
+#         },
+#     },
+#     'loggers': {
+#         'django': {
+#             'handlers': ['file'],
+#             'level': 'INFO',
+#             'propagate': True,
+#         },
+#     },
+# }
