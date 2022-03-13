@@ -20,7 +20,7 @@ songs -postman-collection.json file under the current directory has all the api 
 
 # To run locally without docker
 
-# Create a virtual environment to isolate our package dependencies locally
+#Create a virtual environment to isolate our package dependencies locally
 
 ```
 python3 -m venv env
